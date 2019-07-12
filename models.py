@@ -4,8 +4,8 @@ class State:
         self.name = name
         self.neighbours = []
 
-    def add_neighbour(self, neighbours):
-        self.neighbours.extend(neighbour)
+    def add_neighbours(self, neighbours):
+        self.neighbours.extend(neighbours)
 
     def add_info(path_cost, extimated_cost):
         self.path_cost = path_cost
