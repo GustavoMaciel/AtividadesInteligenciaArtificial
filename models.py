@@ -1,21 +1,20 @@
 class State:
 
-    def __init__(self, name):
+    def __init__(self, name, estimated_cost):
         self.name = name
+        self.heuristic = 0
+        self.estimated_cost = estimated_cost
         self.neighbours = []
 
-    def add_neighbours(self, neighbours):
-        self.neighbours.extend(neighbours)
-
-    def add_info(path_cost, extimated_cost):
-        self.path_cost = path_cost
-        self.extimated_cost = extimated_cost
-
-    def calculate_heuristic(self):
-        return self.path_cost + self.expected_cost
+    def add_neighbours(self, neighbours, ):
+        for state in neighbours:
+            self.neighbours.append({
+                "state": state[0],
+                "cost": state[1],
+            })
 
     def __str__(self):
-        return self.name + self.neighbours
+        return self.name
 
     def __repr__(self):
-        return self.name
+        return "{}: {}".format(self.name, self.heuristic)
